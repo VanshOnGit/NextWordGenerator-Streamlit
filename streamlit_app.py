@@ -44,7 +44,7 @@ class NextWordPredictor(nn.Module):
 
 @st.cache_resource
 def load_model(emb_dim, hidden_size, activation, block_size, random_seed):
-    activation_fn = {"Tanh": torch.tanh, "ReLU": torch.relu, "Sigmoid": torch.sigmoid}[activation]
+    activation_fn = {"tanh": torch.tanh, "relu": torch.relu, "sigmoid": torch.sigmoid}[activation]
     model_path = os.path.join("models", f"model_{emb_dim}_{hidden_size}_{activation}_bs{block_size}_rs{random_seed}.pt")
 
     if not os.path.exists(model_path):
@@ -179,7 +179,8 @@ def plot_word_relations(model, num_words_per_category=10):
 st.title("Next Word Prediction App")
 emb_dim = st.sidebar.selectbox("Embedding Dimension", [128, 256], index=1)
 hidden_size = st.sidebar.selectbox("Hidden Size", [512, 1024], index=1)
-activation = st.sidebar.selectbox("Activation Function", ["ReLU", "Tanh"])
+activation = st.sidebar.selectbox("Activation Function", ["relu", "tanh"])
+
 block_size = st.sidebar.slider("Block Size", 3, 15, default_block_size)
 random_seed = st.sidebar.number_input("Random Seed", min_value=0, value=default_random_seed)
 
