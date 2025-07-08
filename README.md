@@ -1,19 +1,40 @@
-# Next Word Prediction App
+<p align="center">
+  <img src="logo.png" alt="SherlockNext Logo" width="250"/>
+</p>
 
-Deployed App: https://vansh-textgen.streamlit.app/
+# SherlockNext – Next Word Prediction Web App
 
-This repository contains a Streamlit-based application for next-word prediction, developed under the guidance of Professor Nipun Batra at IIT Gandhinagar. The app is trained on *The Adventures of Sherlock Holmes* by Arthur Conan Doyle and provides predictions for user-input text.
+**Deployed App:** [https://vansh-textgen.streamlit.app/](https://vansh-textgen.streamlit.app/)  
+**Developed by:** Vansh K | Guided by Prof. Nipun Batra, IIT Gandhinagar
+
+SherlockNext is a lightweight and interactive web app built with **Streamlit** that performs next-word prediction using a PyTorch model trained on *The Adventures of Sherlock Holmes* by Arthur Conan Doyle.
+
+---
 
 ## Features
-- **Trained Dataset**: Utilizes text from *The Adventures of Sherlock Holmes* to generate predictions.
-- **Handles Unknown Words**: Replaces unknown words with their closest known equivalent using word embeddings.
-- **Embedding Support**: Works seamlessly with embedding dimensions of 128 and 256.
-- **Word Relationship Visualization**: Interactive t-SNE plots to explore relationships like synonyms, antonyms, and more.
-- **Device Adaptability**: Automatically utilizes GPU (if available) for faster computations.
-- **User-Friendly Interface**: Streamlit-powered app for an interactive experience.
 
-## Usage
-1. Enter a text sequence in the input box.
-2. Adjust parameters like embedding size, block size, and activation function from the sidebar.
-3. Generate next-word predictions.
+- **Next-Word Prediction**: Predicts the next few words based on user input using a trained language model.
+- **Flexible Model Settings**: Choose embedding size, hidden layer size, and activation function from the sidebar.
+- **Handles Unknown Words**: Replaces unknown words with the closest known ones using word embeddings and WordNet.
+- **Interactive Interface**: Clean UI for real-time prediction and experimentation.
+- **CUDA Support**: Utilizes GPU if available for faster inference.
+
+---
+
+## App Preview
+
+The model generates the next words for your input using a fixed context size (block size). Users can configure model hyperparameters from the sidebar.
+
+---
+
+## Tech Stack
+
+- Python, PyTorch
+- Streamlit
+- NLTK (WordNet)
+- NumPy, scikit-learn, Matplotlib
+
+---
+
+## Project Structure
 
