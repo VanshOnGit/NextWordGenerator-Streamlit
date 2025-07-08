@@ -10,6 +10,8 @@ import numpy as np
 import torch.nn.functional as F
 from sklearn.metrics.pairwise import cosine_similarity
 import nltk
+import base64
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 st.write(f"Using device: {device}")
@@ -101,9 +103,12 @@ def generate_text(model, context, max_words, block_size):
 
     return ' '.join(generated_text) if generated_text else '<No valid output>'
 
-with st.container():
-    st.image("logo.png", width=300)
-    st.markdown("<h1 style='text-align: center;'>SherlockNext - Next Word Prediction App</h1>", unsafe_allow_html=True)
+logo_path = os.path.join("logo", "logo.png")
+if os.path.exists(logo_path):
+    st.markdown(
+        f"<div style='text-align: center;'><img src='data:image/png;base64,{base64.b64encode(open(logo_path, 'rb').read()).decode()}' width='400'/></div>",
+        unsafe_allow_html=True
+    )
 
 st.title("SherlockNext - Next Word Prediction App")
 emb_dim = st.sidebar.selectbox("Embedding Dimension", [128, 256], index=1)
