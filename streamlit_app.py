@@ -101,15 +101,7 @@ def generate_text(model, context, max_words, block_size):
 
     return ' '.join(generated_text) if generated_text else '<No valid output>'
 
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <img src="logo.png" alt="logo" width="300">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
+st.image("logo.png", width=300)
 
 st.title("SherlockNext - Next Word Prediction App")
 emb_dim = st.sidebar.selectbox("Embedding Dimension", [128, 256], index=1)
