@@ -101,7 +101,7 @@ def generate_text(model, context, max_words, block_size):
 
     return ' '.join(generated_text) if generated_text else '<No valid output>'
 
-st.title("Next Word Prediction App")
+st.title("SherlockNext - Next Word Prediction App")
 emb_dim = st.sidebar.selectbox("Embedding Dimension", [128, 256], index=1)
 hidden_size = st.sidebar.selectbox("Hidden Size", [512, 1024], index=1)
 activation = st.sidebar.selectbox("Activation Function", ["relu", "tanh"])
