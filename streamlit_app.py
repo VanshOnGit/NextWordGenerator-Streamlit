@@ -103,12 +103,24 @@ def generate_text(model, context, max_words, block_size):
 
     return ' '.join(generated_text) if generated_text else '<No valid output>'
 
-logo_path = os.path.join("logo", "logo.png")
-if os.path.exists(logo_path):
-    st.markdown(
-        f"<div style='text-align: center;'><img src='data:image/png;base64,{base64.b64encode(open(logo_path, 'rb').read()).decode()}' width='400'/></div>",
-        unsafe_allow_html=True
-    )
+import base64
+
+def get_base64_image(image_path):
+    with open(image_path, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+image_base64 = get_base64_image("logo.png")  # Make sure logo.png is in the same directory
+
+st.markdown(
+    f"""
+    <div style='text-align: center;'>
+        <img src='data:image/png;base64,{image_base64}' width='250'/>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
 st.title("SherlockNext - Next Word Prediction App")
 emb_dim = st.sidebar.selectbox("Embedding Dimension", [128, 256], index=1)
