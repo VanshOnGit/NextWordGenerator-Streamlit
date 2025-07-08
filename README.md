@@ -5,7 +5,7 @@
 # SherlockNext – Next Word Prediction Web App
 
 **Deployed App:** [https://vansh-textgen.streamlit.app/](https://vansh-textgen.streamlit.app/)  
-**Developed by:** Vansh K | Guided by Prof. Nipun Batra, IIT Gandhinagar
+**Developed by:** Vansh Kumar | Guided by Prof. Nipun Batra, IIT Gandhinagar
 
 SherlockNext is a lightweight and interactive web app built with **Streamlit** that performs next-word prediction using a PyTorch model trained on *The Adventures of Sherlock Holmes* by Arthur Conan Doyle.
 
@@ -21,20 +21,7 @@ SherlockNext is a lightweight and interactive web app built with **Streamlit** t
 
 ---
 
-## App Preview
-
 The model generates the next words for your input using a fixed context size (block size). Users can configure model hyperparameters from the sidebar.
 
 ---
-
-## Tech Stack
-
-- Python, PyTorch
-- Streamlit
-- NLTK (WordNet)
-- NumPy, scikit-learn, Matplotlib
-
----
-
-## Project Structure
 
