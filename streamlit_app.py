@@ -110,12 +110,12 @@ def get_base64_image(image_path):
         data = f.read()
     return base64.b64encode(data).decode()
 
-image_base64 = get_base64_image("logo.png")  # Make sure logo.png is in the same directory
+image_base64 = get_base64_image("logo.png")  
 
 st.markdown(
     f"""
     <div style='text-align: center;'>
-        <img src='data:image/png;base64,{image_base64}' width='250'/>
+        <img src='data:image/png;base64,{image_base64}' width='400'/>
     </div>
     """,
     unsafe_allow_html=True
